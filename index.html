@@ -1,14 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Increment-decrement </title>
+    <title>Increment-decrement</title>
     <style>
-        .product{
+         .card {
+            width: 320px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+
+         .product {
             height: 300px;
-            width: 300px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
             cursor: pointer;
+        }
+
+         .product-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 10px 0;
+            color: rgb(80, 4, 80);
+        }
+
+         .price {
+            font-size: 1.2em;
+            color: #333;
+            margin: 5px 0 20px;
+        }
+
+         .quantity-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+         .quantity-icon {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+         .btn-buy {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+         .btn-buy:hover {
+            background-color: #218838;
         }
         
     </style>
@@ -16,29 +72,29 @@
 <body>
     <div class="card" id="card">
         <img src="1.webp" class="product"/>
-<h2 class="product-title">Pretty modern women dress</h2>
-<P class="price">Price: rs 678/-</P>
-<div class="quantity-container">
-    <img src="minus" class="quantity-icon" onclick="dec()"/>
-    <span>1</span>
-    <img src="plus" class="quantity-icon" onclick="inc()"/>
-</div>
-<button onclick="" class="btn-buy">Buy now </button>
- </div>
-<script>
-const quantElement = document.getElementById('quantity');
+        <h2 class="product-title">Pretty modern women's dress</h2>
+        <p class="price">Price: Rs 678/-</p>
+        <div class="quantity-container">
+            <img src="minus.png" class="quantity-icon" onclick="dec()"/>
+            <span id="quantity">1</span>
+            <img src="plus.png" class="quantity-icon" onclick="inc()"/>
+        </div>
+        <button onclick="" class="btn-buy">Buy now</button>
+    </div>
 
-function inc(){
-    let quantity=parseInt(quantElement.innerText);
-    quantElement.innerText = ++quantity;
-}
-function dec(){
-    let quantity=parseInt(quantElement.innerText);
-    if(quantity>1){
-        quantElement.innerText = --quantity;
+    <script>
+        const quantElement = document.getElementById('quantity');
 
-    }
- }
-</script>
+        function inc(){
+            let quantity = parseInt(quantElement.innerText);
+            quantElement.innerText = ++quantity;
+        }
+        function dec(){
+            let quantity = parseInt(quantElement.innerText);
+            if(quantity > 1){
+                quantElement.innerText = --quantity;
+            }
+        }
+    </script>
 </body>
 </html>
