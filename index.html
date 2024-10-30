@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment-decrement </title>
+    <style>
+        .product{
+            height: 300px;
+            width: 300px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <img src="1.webp" class="product"/>
+<h2 class="product-title">Pretty modern women dress</h2>
+<P class="price">Price: rs 678/-</P>
+<div class="quantity-container">
+    <img src="minus" class="quantity-icon" onclick="dec()"/>
+    <span>1</span>
+    <img src="plus" class="quantity-icon" onclick="inc()"/>
+</div>
+<button onclick="" class="btn-buy">Buy now </button>
+ </div>
+<script>
+const quantElement = document.getElementById('quantity');
+
+function inc(){
+    let quantity=parseInt(quantElement.innerText);
+    quantElement.innerText = ++quantity;
+}
+function dec(){
+    let quantity=parseInt(quantElement.innerText);
+    if(quantity>1){
+        quantElement.innerText = --quantity;
+
+    }
+ }
+</script>
+</body>
+</html>
